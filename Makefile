@@ -1,6 +1,9 @@
-# build an executable named myprog from myprog.c
-  all: add.c 
- 	  gcc -g -Wall -o add add.c
+CC = gcc
+CFLAGS = -Wall -g
 
-  clean: 
-	  $(RM) add
+# Just compile/link all files in one hit.
+add: add.c
+	${CC} ${CFLAGS} -o add add.c 
+
+clean:
+	rm -f add
